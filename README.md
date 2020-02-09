@@ -8,10 +8,10 @@ operators: Operators
 Ansible galaxy:
 ---------------
 
-[https://galaxy.ansible.com/devops-toolbox.operators](https://galaxy.ansible.com/devops-toolbox.operators)
+[https://galaxy.ansible.com/devopstoolbox.operators](https://galaxy.ansible.com/devopstoolbox.operators)
 
 ```bash
-ansible-galaxy install devops-toolbox.operators
+ansible-galaxy install devopstoolbox.operators
 ```
 
 Requirements
@@ -60,7 +60,7 @@ Example Playbook
   tasks:
     - name: operators is configured
       import_role:
-        name: devops-toolbox.operators
+        name: devopstoolbox.operators
       vars:
         operators_packages_state: present
         operators_remove_packages: true
@@ -89,4 +89,4 @@ MIT
 Author Information
 ------------------
 
-- [Mihai Criveti](https://www.linkedin.com/in/devops-toolbox.)
+- [Mihai Criveti](https://www.linkedin.com/in/devopstoolbox.)
