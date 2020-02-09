@@ -1,0 +1,10 @@
+---
+# Template configuration files for operators
+
+- name: template is copied
+  template:
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+  become: true
+  loop: "{{ operators_templates_copy }}"
+  when: operators_copy_templates

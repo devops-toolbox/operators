@@ -1,0 +1,44 @@
+---
+# vars file for packages
+
+# Detected OS
+my_os: "{{ ansible_distribution }}_{{ ansible_distribution_major_version }}"
+
+# Repos create
+operators_repos_create: "{{ _operators_repos_create['all']
+  | union ( _operators_repos_create[my_os]
+  | default([]) ) }}"
+
+# Repos download
+operators_repos_download: "{{ _operators_repos_download['all']
+  | union ( _operators_repos_download[my_os]
+  | default([]) ) }}"
+
+# Templates Copy
+operators_templates_copy: "{{ _operators_templates_copy['all']
+  | union ( _operators_templates_copy[my_os]
+  | default([]) ) }}"
+
+# Services Enable
+operators_services_enable: "{{ _operators_services_enable['all']
+  | union ( _operators_services_enable[my_os]
+  | default([]) ) }}"
+
+# SELinux Enable
+operators_selinux_enable: "{{ _operators_selinux_enable['all']
+  | union ( _operators_selinux_enable[my_os]
+  | default([]) ) }}"
+
+# Packages lists
+operators_packages_remove: "{{ _operators_packages_remove['all']
+  | union ( _operators_packages_remove[my_os]
+  | default([]) ) }}"
+operators_packages_repos: "{{ _operators_packages_repos['all']
+  | union ( _operators_packages_repos[my_os]
+  | default([]) ) }}"
+operators_packages_prereq: "{{ _operators_packages_prereq['all']
+  | union ( _operators_packages_prereq[my_os]
+  | default([]) ) }}"
+operators_packages_install: "{{ _operators_packages_install['all']
+  | union ( _operators_packages_install[my_os]
+  | default([]) ) }}"
